@@ -48,9 +48,6 @@
 			Edit
 		  </button>
 		</a>
-		<button id="delete-venue" data-id="{{ venue.id }}"class="btn btn-default btn-sm">
-			Delete
-		</button>
 	  </div>
 	<div class="col-sm-6">
 		<img src="{{ venue.image_link }}" alt="Venue Image" />
@@ -84,16 +81,6 @@
 		{% endfor %}
 	</div>
 </section>
-
-<script>
-	const delBtn = document.getElementById('delete-venue');
-	delBtn.onclick = function(e){
-		venue_id = e.target.dataset['id'];
-		fetch('/venues/' + venue_id, {
-			method: 'DELETE'
-		});
-	}
-</script>
 
 {% endblock %}
 
